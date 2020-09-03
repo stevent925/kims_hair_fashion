@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: tan;
+    width: 300px;
+}
+
+a {
+    color: blue;
+    font-size: xx-large;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: yellow;
+    text-decoration: line-through;
+}
+
+nav {
+    float: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+nav li{
+    float: left;
+    list-style: none;
+    padding: 0 10px;
+}
+
+#heading {
+    color: red;
+    background-color: seagreen;
+    width: 300px;
+}
+
+#homeImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#home {
+    border: solid;
+    display: block;
+    text-align: center;
+}
+
+#appointment {
+    color: red;
+    display: none;
+    /* background-image: url(../img/hair1.jpg); */
+    /* background-size: 900px 600px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center; */
+    /* padding: 10%; */
+    border: solid;
+}
+
+#please {
+    text-align: center;
+    width: 10%;
+    border: solid;
+    margin: 5% auto;
+}
+
+#hair1 {
+    width: 900px;
+    height: 600px;
+    border: solid;
+    background-image: url(../img/hair1.jpg);
+    background-size: 900px 600px;
+    background-repeat: no-repeat;
+    margin: 5% auto;
+}
+
+#appointment h1 {
+    color: skyblue;
+}
+
+#contact {
+    border: solid;
+    display: none;
+    height: 500px;
+    background-image: url(../img/contact.jpeg);
+    background-size: 500px 500px;
+    background-repeat: no-repeat;
+}
+
+#hours {
+    width: 250px; 
+    border-style: dashed; 
+    padding: 20px; 
+    height: 150px; 
+    margin-left: 30%; 
+    margin-top: 5%; 
+    position: absolute;
+}
+
+#lol {
+    color: aqua;
+}
