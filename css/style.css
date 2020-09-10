@@ -65,7 +65,7 @@ nav li{
 
 #please {
     text-align: center;
-    width: 10%;
+    width: 20%;
     border: solid;
     margin: 5% auto;
 }
@@ -103,6 +103,24 @@ nav li{
     position: absolute;
 }
 
+#info {
+    color: red;
+    border: solid;
+    width: 400px;
+    margin-left: 30%;
+}
+
 #lol {
-    color: aqua;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#lol td, th {
+    border: 1px solid gray;
+    text-align: left;
+    padding: 8px;
+}
+
+#lol tr:nth-child(even){
+    background-color: yellow;
 }

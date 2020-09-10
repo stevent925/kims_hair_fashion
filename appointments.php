@@ -2,7 +2,7 @@
 
 <?php
     // Create SELECT Query
-    $query = "SELECT * FROM shouts ORDER BY id DESC";
+    $query = "SELECT * FROM appointments ORDER BY date, time DESC";
     $shouts = mysqli_query($conn, $query);
 ?>
 
@@ -12,16 +12,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Appointments</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div id="results"></div>
     <a href="/kims_hair_fashion">Back to Form</a>
             <?php
-            $sqlget = "SELECT * FROM appointments";
+            $sqlget = "SELECT * FROM appointments ORDER BY date, time DESC";
             $sqldata = mysqli_query($conn, $sqlget) or die('error getting');
 
-            echo "<table id='lol' style='color:green; text-align: center;'>";
-            echo "<tr><th>First Name</td><th>Last Name</th><th>Email</th><th>Phone Number</th><th>Date</th><th>Notes</th>";
+            echo "<table id='lol' style='color:green;'>";
+            echo "<tr><th>First Name</td><th>Last Name</th><th>Email</th><th>Phone Number</th><th>Date</th><th>Time</th><th>Notes</th>";
 
             while($row = mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
                 echo "<tr><td>";
@@ -33,7 +35,9 @@
                 echo "</td><td>";
                 echo $row['phoneNumber'];
                 echo "</td><td>";
-                echo $row['dateTime'];
+                echo $row['date'];
+                echo "</td><td>";
+                echo $row['time'];
                 echo "</td><td>";
                 echo $row['notes'];
                 echo "</td></tr>";

@@ -28,29 +28,41 @@ $(document).ready(function() {
         var lname = $('#lastName').val();
         var email = $('#email').val();
         var phone = $('#phoneNumber').val();
-        var date = $('#dateTime').val();
+        var date = $('#datepicker').val();
+        var time = $('#timepicker').val();
         var notes = $('#notes').val();
 
-        var dataString = `firstName=${fname}&lastName=${lname}&email=${email}&phoneNumber=${phone}&dateTime=${date}&notes=${notes}`;
+        var dataString = `firstName=${fname}&lastName=${lname}&email=${email}&phoneNumber=${phone}&date=${date}&time=${time}&notes=${notes}`;
 
             // Validation
-            if (fname == '' || lname == '' || email == '' || phone == '' || date == '') {
+            if (fname == '' || lname == '' || email == '' || phone == '' || date == '' || time == '') {
                 alert('Please fill in everything (besides notes)');
             } else {
                 $.ajax({
+                    async: false,
                     type: "POST",
                     url: "../kims_hair_fashion/admin.php",
                     data: dataString,
                     cache: false,
                     success: function(html) {
-                        //$('#lol').append(html);
                         $('#please').trigger('reset');
+                        alert('Appointment succesfully made');
                     }
                 });
-                alert('Appointment succesfully made');
+
+                $.ajax({
+                    async: false,
+                    type: "GET",
+                    url: "../kims_hair_fashion/email.php",
+                    data: dataString,
+                    cache: false,
+                    success: function(html) {
+                        alert('Email sent');
+                    }
+                })
             }
 
         return false;
     });
-
 });
+

@@ -7,16 +7,35 @@
     <title>Kim's Hair Fashion</title>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.min.css">
     <link rel="stylesheet" href="css/style.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-    
+
+
+
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/script.js"></script>
+
   <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
+  $(function() {
+    $( "#datepicker" ).datepicker({
+        dateFormat: 'yy-mm-dd',
+        showOn: "button",
+        buttonImage: "img/calendar.gif",
+        buttonImageOnly: true,
+        buttonText: "Select date"
+    });
+  });
+
+  $(function() {
+      $("#timepicker").timepicker( {
+          minTime: '9:00am',
+          maxTime: '5:00pm'
+      });
+  });
   </script>
 </head>
 <body>
@@ -45,27 +64,32 @@
             <!-- <form action="results.php" method="GET" id="please"> -->
             <form id="please">
                 <h1>Book an appointment</h1>
-                <label for="firstName">First Name:</label> <br>
+                <label for="firstName">First Name:</label><br>
                 <input type="text" id="firstName" name="firstName"><br>
 
-                <label for="lastName">Last Name:</label> <br>
+                <label for="lastName">Last Name:</label><br>
                 <input type="text" id="lastName" name="lastName"><br>
 
-                <label for="email">Email Address:</label> <br>
+                <label for="email">Email Address:</label><br>
                 <input type="text" id="email" name="email"><br>
 
-                <label for="phoneNumber">Phone Number:</label> <br>
+                <label for="phoneNumber">Phone Number:</label><br>
                 <input type="text" id="phoneNumber" name="phoneNumber"><br>
 
-                <label for="dateTime">Date:</label> <br>
-                <input type="text" id="dateTime" name="dateTime"><br>
+                <label for="date">Date:</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="datepicker" name="date"><br>
 
-                <label for="notes">Notes:</label> <br>
-                <input type="text" id="notes" name="notes"><br>
+                <label for="time">Time:</label><br>
+                <input type="text" id="timepicker" name="time"><br>
+
+                <label for="notes">Notes:</label><br>
+                <input type="text" id="notes" name="notes"><br><br>
+
                 <input type="submit" id="submit" value="Submit">    
             </form>
 
             <div id="hair1"></div>
+        </div>
         
         <div id="contact">
             <div id="hours">
@@ -78,8 +102,11 @@
                 Friday: 9am-5pm <br>
                 Saturday: 10am-5pm 
             </div>
-            Telephone: 336-825-4098 | Email: test@email.com <br>
-            Location: 308 College St, Toronto, ON M5T 1S3, Canada <br><br>
+
+            <div id="info">
+                <b>Telephone:</b> 336-825-4098 | <b>Email:</b> test@email.com <br><br>
+                <b>Location:</b> 308 College St, Toronto, ON M5T 1S3, Canada <br><br>
+            </div>
         </div>
 
     </div>
@@ -87,4 +114,3 @@
 
 </body>
 </html>
-
