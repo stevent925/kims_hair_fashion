@@ -37,6 +37,10 @@ $(document).ready(function() {
             // Validation
             if (fname == '' || lname == '' || email == '' || phone == '' || date == '' || time == '') {
                 alert('Please fill in everything (besides notes)');
+            } else if (!validateEmail(email)) {
+                alert('Email not valid');
+            } else if (!validatePhoneNumber(phone)) {
+                alert('Phone number not valid');   
             } else {
                 $.ajax({
                     async: false,
@@ -65,4 +69,16 @@ $(document).ready(function() {
         return false;
     });
 });
+
+function validateEmail(email) {
+    var regex = /\S+@\S+\.\S+/;
+    
+    return regex.test(email);
+}
+
+function validatePhoneNumber(phone) {
+    var regex = /^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{4})$/;
+
+    return regex.test(phone);
+}
 

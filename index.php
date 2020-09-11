@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/jquery.timepicker.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap">
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -33,7 +34,8 @@
   $(function() {
       $("#timepicker").timepicker( {
           minTime: '9:00am',
-          maxTime: '5:00pm'
+          maxTime: '5:00pm',
+          disableTextInput: true
       });
   });
   </script>
@@ -60,34 +62,31 @@
         </div>
 
         <div id="appointment">
-
-            <!-- <form action="results.php" method="GET" id="please"> -->
             <form id="please">
                 <h1>Book an appointment</h1>
                 <label for="firstName">First Name:</label><br>
-                <input type="text" id="firstName" name="firstName"><br>
+                <input type="text" id="firstName" name="firstName" maxlength="20"><br>
 
                 <label for="lastName">Last Name:</label><br>
-                <input type="text" id="lastName" name="lastName"><br>
+                <input type="text" id="lastName" name="lastName" maxlength="20"><br>
 
                 <label for="email">Email Address:</label><br>
-                <input type="text" id="email" name="email"><br>
+                <input type="text" id="email" name="email" maxlength="40"><br>
 
                 <label for="phoneNumber">Phone Number:</label><br>
-                <input type="text" id="phoneNumber" name="phoneNumber"><br>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Format: 123-123-1234"><br>
 
                 <label for="date">Date:</label><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="datepicker" name="date"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="datepicker" name="date" readonly><br>
 
                 <label for="time">Time:</label><br>
                 <input type="text" id="timepicker" name="time"><br>
 
                 <label for="notes">Notes:</label><br>
-                <input type="text" id="notes" name="notes"><br><br>
+                <textarea id="notes" name="notes" placeholder="Optional" maxlength="255"></textarea><br>
 
                 <input type="submit" id="submit" value="Submit">    
             </form>
-
             <div id="hair1"></div>
         </div>
         

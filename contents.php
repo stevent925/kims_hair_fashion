@@ -11,7 +11,6 @@
   <div text-align="center">
   </div>
   <p>Hi,</p> <br>
-  <p>We look forward to seeing you on</p>
 
 </div>
 </body>
