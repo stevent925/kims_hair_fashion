@@ -71,9 +71,9 @@ while($row = mysqli_fetch_array($result)) {
     //Set the subject line
     $mail->Subject = 'Thank you for making an appointment with Kim\'s Hair Fashion Salon.';
 
-    $mail->Body = "Hi $fname,<br><br>" . "We look forward to seeing you on <b>$date</b> at <b>$time</b>. We want to share with you that all our salons have reopened. 
+    $mail->Body = "<p>Hi $fname,<br><br>" . "We look forward to seeing you on <b>$date</b> at <b>$time</b>. We want to share with you that all our salons have reopened. 
     Your health and safety is our top priority.<br><br> We take pride in our clean and well-run salon, and we know this is more important than ever amid concerns around Coronavirus (COVID-19).
-    <br><br> If you have any questions or concerns, please call or email us at (336)-825-4098 or kimtran9250@gmail.com";
+    <br><br> If you have any questions or concerns, please call or email us at (336)-825-4098 or kimtran9250@gmail.com</p>";
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body

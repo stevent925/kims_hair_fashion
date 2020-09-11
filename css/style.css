@@ -1,23 +1,26 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 
-header {
+header h1 {
     background-color: tan;
     width: 300px;
+    font-family: 'Tangerine', cursive;
 }
 
 a {
-    color: blue;
+    background-color: black;
+    color: white;
     font-size: xx-large;
     font-weight: bold;
     text-decoration: none;
+    font-family: 'Tangerine', cursive;
 }
 
 a:hover {
-    background-color: yellow;
-    text-decoration: line-through;
+    text-decoration: underline;
 }
 
 nav {
@@ -28,9 +31,10 @@ nav {
 }
 
 nav li{
+    background-color: black;
     float: left;
     list-style: none;
-    padding: 0 10px;
+    padding: 0 100px;
 }
 
 #heading {
@@ -65,9 +69,13 @@ nav li{
 
 #please {
     text-align: center;
-    width: 20%;
-    border: solid;
+    width: 30%;
     margin: 5% auto;
+    border: solid;
+}
+
+#please h1 {
+    background-color: green;
 }
 
 #hair1 {
@@ -99,15 +107,17 @@ nav li{
     padding: 20px; 
     height: 150px; 
     margin-left: 30%; 
-    margin-top: 5%; 
+    margin-top: 13%; 
     position: absolute;
 }
 
 #info {
-    color: red;
-    border: solid;
+    color: black;
+    border: dashed;
     width: 400px;
     margin-left: 30%;
+    margin-top: 3%;
+    padding: 20px;
 }
 
 #lol {
@@ -124,3 +134,15 @@ nav li{
 #lol tr:nth-child(even){
     background-color: yellow;
 }
+
+
+#notes {
+    width: 300px;
+    height: 150px;
+    resize: none;
+}
+
+#notes::placeholder {
+    text-align: center;
+}
+
