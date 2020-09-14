@@ -22,7 +22,7 @@
             $sqlget = "SELECT * FROM appointments ORDER BY date, time DESC";
             $sqldata = mysqli_query($conn, $sqlget) or die('error getting');
 
-            echo "<table id='lol' style='color:green;'>";
+            echo "<table id='lol'>";
             echo "<tr><th>First Name</td><th>Last Name</th><th>Email</th><th>Phone Number</th><th>Date</th><th>Time</th><th>Notes</th>";
 
             while($row = mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
