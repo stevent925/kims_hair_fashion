@@ -1,16 +1,16 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: white;
 }
 
 header h1 {
-    background-color: tan;
-    width: 300px;
+    background-color: black;
+    color: white;
+    width: 100%;
     font-family: 'Tangerine', cursive;
 }
 
-a {
+.menu {
     background-color: black;
     color: white;
     font-size: xx-large;
@@ -19,7 +19,12 @@ a {
     font-family: 'Tangerine', cursive;
 }
 
-a:hover {
+#title {
+    color: white;
+    text-decoration: none;
+}
+
+.menu:hover {
     text-decoration: underline;
 }
 
@@ -38,9 +43,9 @@ nav li{
 }
 
 #heading {
-    color: red;
-    background-color: seagreen;
-    width: 300px;
+    color: white;
+    background-color: black;
+    width: 100%;
 }
 
 #homeImage {
@@ -53,11 +58,47 @@ nav li{
     border: solid;
     display: block;
     text-align: center;
+    height: 1000px;
+}
+
+#photos {
+    border: solid;
+    width: 25%;
+    height: 250px;
+    margin-left: 5%;
+    margin-top: 1%;
+    float: left;
+    background-image: url(../img/photo.jpeg);
+    background-size: 500px 250px;
+    background-repeat: no-repeat;
+}
+
+#photos2 {
+    border: solid;
+    width: 25%;
+    height: 250px;
+    margin-left: 7%;
+    margin-top: 1%;
+    float: left;
+    background-image: url(../img/photo2.jpeg);
+    background-size: 500px 250px;
+    background-repeat: no-repeat;
+}
+
+#photos3 {
+    border: solid;
+    width: 25%;
+    height: 250px;
+    margin-left: 70%;
+    margin-top: 1%;
+    background-image: url(../img/photo3.jpg);
+    background-size: 500px 250px;
+    background-repeat: no-repeat;
 }
 
 #appointment {
-    color: red;
     display: none;
+    height: 1500px;
     /* background-image: url(../img/hair1.jpg); */
     /* background-size: 900px 600px;
     background-repeat: no-repeat;
@@ -75,27 +116,26 @@ nav li{
 }
 
 #please h1 {
-    background-color: green;
+    background-color: black;
+}
+
+#appointment h1 {
+    color: white;
 }
 
 #hair1 {
     width: 900px;
     height: 600px;
-    border: solid;
     background-image: url(../img/hair1.jpg);
     background-size: 900px 600px;
     background-repeat: no-repeat;
-    margin: 5% auto;
-}
-
-#appointment h1 {
-    color: skyblue;
+    margin: auto;
 }
 
 #contact {
     border: solid;
     display: none;
-    height: 500px;
+    height: 1000px;
     background-image: url(../img/contact.jpeg);
     background-size: 500px 500px;
     background-repeat: no-repeat;
@@ -123,6 +163,7 @@ nav li{
 #lol {
     border-collapse: collapse;
     width: 100%;
+    color: green;
 }
 
 #lol td, th {
@@ -135,7 +176,6 @@ nav li{
     background-color: yellow;
 }
 
-
 #notes {
     width: 300px;
     height: 150px;
@@ -146,3 +186,8 @@ nav li{
     text-align: center;
 }
 
+footer {
+    background-color: gray;
+    text-align: center;
+    margin-top: auto;
+}

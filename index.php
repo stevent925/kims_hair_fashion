@@ -42,14 +42,14 @@
 </head>
 <body>
     <header>
-        <h1>Kim's Hair Fashion</h1>
+        <h1><a href="" id="title">Kim's Hair Fashion</a></h1>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#">Home</a></li> 
-            <li><a href="#">Appointment</a></li> 
-            <li><a href="#">Contact</a></li> 
+            <li><a class="menu" href="#">Home</a></li> 
+            <li><a class="menu" href="#">Appointment</a></li> 
+            <li><a class="menu" href="#">Contact</a></li> 
         </ul>
     </nav>
 
@@ -59,6 +59,9 @@
         <div id="home">
             This is home. <br>
             <img src="img/home.jpg" id="homeImage">
+            <div id="photos"></div>
+            <div id="photos2"></div>
+            <div id="photos3"></div>
         </div>
 
         <div id="appointment">
@@ -107,9 +110,10 @@
                 <b>Location:</b> 308 College St, Toronto, ON M5T 1S3, Canada <br><br>
             </div>
         </div>
-
     </div>
 
-
+    <footer>
+            <p>Copyright &copy; Kim's Hair Fashion</p>
+    </footer>
 </body>
 </html>
