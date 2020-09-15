@@ -6,10 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kim's Hair Fashion</title>
 
+
+    <!-- jquery -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
     <link rel="stylesheet" href="css/jquery.timepicker.min.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.min.css">
+
+    <!-- font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap">
+
+    <!-- standard css -->
     <link rel="stylesheet" href="css/style.css">
+
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -18,11 +28,21 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/jquery.timepicker.min.js"></script>
+
+    <!-- <script src="js/jquery.js"></script> -->
+    <script src="js/jquery.datetimepicker.min.js"></script>
+
+    
     <script src="js/script.js"></script>
 
   <script>
   $(function() {
     $( "#datepicker" ).datepicker({
+        minDate: 0,
+        beforeShowDay: function(date) {
+            var day = date.getDay();
+            return [(day != 0), ''];
+        },
         dateFormat: 'yy-mm-dd',
         showOn: "button",
         buttonImage: "img/calendar.gif",
@@ -35,9 +55,17 @@
       $("#timepicker").timepicker( {
           minTime: '9:00am',
           maxTime: '5:00pm',
-          disableTextInput: true
+          disableTextInput: true,
+          disableTimeRanges: [['9:00am', '2:00pm']]
       });
   });
+  $(function () {
+    $("#datetimepicker").datetimepicker( {
+        minDate: new Date()
+    });
+  });
+
+
   </script>
 </head>
 <body>
@@ -77,13 +105,17 @@
                 <input type="text" id="email" name="email" maxlength="40"><br>
 
                 <label for="phoneNumber">Phone Number:</label><br>
-                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Format: 123-123-1234"><br>
+                <input type="tel" id="phoneNumber" name="phoneNumber"><br>
+                <p style="color: red;"><small>Format: 123-123-1234</small></p>
 
                 <label for="date">Date:</label><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="datepicker" name="date" readonly><br>
 
                 <label for="time">Time:</label><br>
                 <input type="text" id="timepicker" name="time"><br>
+
+                <label for="datetimepicker">TEST:</label><br>
+                <input type="text" id="datetimepicker" name="datetimepicker"><br>
 
                 <label for="notes">Notes:</label><br>
                 <textarea id="notes" name="notes" placeholder="Optional" maxlength="255"></textarea><br>

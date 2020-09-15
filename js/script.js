@@ -82,3 +82,7 @@ function validatePhoneNumber(phone) {
     return regex.test(phone);
 }
 
+function confirmDelete() {
+    return confirm("Are you sure you want to delete?");
+}
+
