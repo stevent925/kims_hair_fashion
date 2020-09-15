@@ -2,6 +2,7 @@
 
 <?php
     if(isset($_POST['firstName']) && isset($_POST['lastName'])) {
+
         $firstName = mysqli_real_escape_string($conn, $_POST['firstName']);
         $lastName = mysqli_real_escape_string($conn, $_POST['lastName']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
