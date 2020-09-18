@@ -7,9 +7,8 @@
     <title>Kim's Hair Fashion</title>
 
 
-    <!-- jquery -->
+    <!-- timepicker css -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
     <link rel="stylesheet" href="css/jquery.timepicker.min.css">
     <link rel="stylesheet" href="css/jquery.datetimepicker.min.css">
 
@@ -21,6 +20,7 @@
 
     
 
+    <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
@@ -29,14 +29,18 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/jquery.timepicker.min.js"></script>
 
-    <!-- <script src="js/jquery.js"></script> -->
-    <script src="js/jquery.datetimepicker.min.js"></script>
+
+    <!-- moment -->
+    <script src="js/moment.js"></script>
+
+    <!-- data time picker -->
+    <script src="js/jquery.datetimepicker.full.min.js"></script>
 
     
     <script src="js/script.js"></script>
 
-  <script>
-  $(function() {
+<script>
+$(function() {
     $( "#datepicker" ).datepicker({
         minDate: 0,
         beforeShowDay: function(date) {
@@ -49,24 +53,92 @@
         buttonImageOnly: true,
         buttonText: "Select date"
     });
-  });
+});
 
-  $(function() {
-      $("#timepicker").timepicker( {
-          minTime: '9:00am',
-          maxTime: '5:00pm',
-          disableTextInput: true,
-          disableTimeRanges: [['9:00am', '2:00pm']]
-      });
-  });
+$(function() {
+    $("#timepicker").timepicker( {
+        minTime: '9:00am',
+        maxTime: '5:00pm',
+        disableTextInput: true,
+        disableTimeRanges: [['9:00am', '2:00pm']]
+    });
+});
+
+$.datetimepicker.setDateFormatter({
+    parseDate: function (date, format) {
+        var d = moment(date, format);
+        return d.isValid() ? d.toDate() : false;
+    },
+
+    formatDate: function (date, format) {
+        return moment(date).format(format);
+    },
+
+    formatMask: function(format) {
+        return formatDate
+        .replace(/Y{4}/g, '9999')
+        .replace(/Y{2}/g, '99')
+        .replace(/M{2}/g, '19')
+        .replace(/D{2}/g, '39')
+        .replace(/H{2}/g, '29')
+        .replace(/m{2}/g, '59')
+        .replace(/s{2}/g, '59');
+    }
+});
+
+$.datetimepicker.setDateFormatter('moment');
+
+jQuery.datetimepicker.setLocale('en');
+
+var checkPastTime = function(inputDateTime) {
+    if (typeof (inputDateTime) != "undefined" && inputDateTime !== null) {
+          var current = new Date();
+
+      // check past year and month
+      if (inputDateTime.getFullYear() < current.getFullYear()) {
+          $('#datetimepicker').datetimepicker('reset');
+          alert("Sorry! past date time not allow.");
+      } else if ((inputDateTime.getFullYear() == current.getFullYear()) && (inputDateTime.getMonth() < current.getMonth())) {
+            $('#datetimepicker').datetimepicker('reset');
+            alert("Sorry! Past date time not allow.");
+      }
+
+      if (inputDateTime.getDate() == current.getDate()) {
+          if (inputDateTime.getHours() < current.getHours()) {
+              $('#datetimepicker').datetimepicker('reset');
+          }
+          this.setOptions({
+              minTime: moment().add(1, 'h'),
+              maxTime: '17:30'
+          });
+      } else {
+          this.setOptions({
+              minTime: '9:00',
+              maxTime: '17:30'
+          });
+      }
+    }
+};
+
+var currentYear = new Date();
+
+
   $(function () {
     $("#datetimepicker").datetimepicker( {
-        minDate: new Date()
+        format:'MM/DD/YYYY h:mm a',
+        formatTime:'h:mm a',
+        validateOnBlur: false,
+        defaultDate: moment().add(1, 'h'),
+        minDate : 0,
+        yearStart : currentYear.getFullYear(), // Start value for current Year selector
+        onChangeDateTime: checkPastTime,
+        onShow: checkPastTime,
+        step: 30
     });
   });
 
 
-  </script>
+</script>
 </head>
 <body>
     <header>
